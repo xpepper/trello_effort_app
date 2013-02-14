@@ -1,0 +1,76 @@
+.span9
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Who?
+        %th Name
+        %th Estimate
+        %th Effort
+        %th Difference
+        %th Start
+
+    - if @tracked_cards.present?
+      %tbody
+        - no_estimates = 0
+        - under_estimates = 0
+        - all_is_ok = 0
+        - no_effort = 0
+        - @tracked_cards.reject(&:no_tracking?).sort_by(&:first_activity_date).reverse.each do |tracked_card|
+
+          - if  tracked_card.estimates.present?
+            - estimate = tracked_card.estimates.last.amount
+          - else
+            - estimate = "n/a"
+
+          - effort = tracked_card.total_effort
+
+          - # calcolo della differenza
+          - if estimate != "n/a"
+            - difference = estimate - effort
+          - else
+            - difference = "n/a"
+
+          - if effort == 0
+            - next
+
+          - # conclusioni
+          - if difference.to_s == "n/a" and effort > 0
+            - no_estimates = no_estimates+1
+            - class_css = "info"
+          - elsif difference.to_f > -0.1
+            - all_is_ok = all_is_ok+1
+            - class_css = "success"
+          - else difference.to_f < 0
+            - #sotto stima
+            - under_estimates = under_estimates+1
+            - class_css = "warning"
+
+
+          %tr{class: class_css}
+            %td.who
+              - tracked_card.members.each do |member|
+                .member= link_to image_tag(member.avatar_url, title: member.username), member.url
+            %td.name= link_to tracked_card.name, tracked_card
+            %td.estimate= estimate
+            %td.effort= effort
+            %td.difference= difference
+            %td.create_at= tracked_card.first_activity_date.strftime("%d %a %b")
+
+    - else
+      %tr
+        %td Empty data :(
+.span3
+  %table.table
+    %thead
+      %th What?
+      %th How many?
+    %tbody
+      %tr
+        %td Without estimates
+        %td= no_estimates
+      %tr
+        %td Under estimates
+        %td= under_estimates
+      %tr
+        %td All is done correctly
+        %td= all_is_ok

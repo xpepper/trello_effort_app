@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+  %meta{ :content => "", :name => "description" }
+  %meta{ :content => "Pier Piero", :name => "author" }
+  %meta{ :content => "3 days", :name => "revisit-after" }
+  %title= "TAP - Trello Effort Application"
+  = stylesheet_link_tag    "application", :media => "all"
+  = stylesheet_link_tag    "default", :media => "all"
+  = javascript_include_tag "application" 
+  = csrf_meta_tags 
+
+  %body
+    = render template:'layouts/menu-header'
+    .container-fluid
+      .row-fluid
+        = yield      
+      = render template: 'layouts/footer' 
