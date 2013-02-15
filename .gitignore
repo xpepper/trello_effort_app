@@ -1,3 +1,11 @@
+config.yml
+mongoid.yml
+.rvmrc
+
+.tmtags
+.tags
+.tags_sorted_by_file
+*.sublime-workspace
 .DS_Store
 *.gem
 *.rbc
@@ -9,22 +17,16 @@ lib/bundler/man
 pkg
 rdoc
 spec/reports
+/spec/tmp/*
+.rspec
 test/tmp
 test/version_tmp
 tmp
-.tmtags
-.tags
-.tags_sorted_by_file
-*.sublime-workspace
 
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
-
-config.yml
-mongoid.yml
-.rvmrc
 
 *.sassc
 **.orig
@@ -32,19 +34,10 @@ mongoid.yml
 rerun.txt
 pickle-email-*.html
 .sass-cache
-.rspec
-log
+
 capybara-*.html
 InstalledFiles
-/.bundle
 /vendor/bundle
 /log/*
-/tmp/*
+log
 /db/*.sqlite3
-/coverage/
-/spec/tmp/*
-lib/bundler/man
-pkg
-spec/reports
-test/tmp
-test/version_tmp
