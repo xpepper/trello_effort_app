@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'trello_effort_tracker'
+# gem 'trello_effort_tracker', path: "../trello_effort_tracker"
 
 ## Rails gems ##
 gem 'rails', '3.2.12'
@@ -8,6 +9,10 @@ gem 'rails', '3.2.12'
 # Gems used only for assets and not required
 # in production environments by default.
 gem "haml"
+
+group :development do
+  gem "better_errors"
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
