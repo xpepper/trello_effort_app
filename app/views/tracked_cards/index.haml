@@ -15,7 +15,7 @@
         - under_estimates = 0
         - all_is_ok = 0
         - no_effort = 0
-        - @tracked_cards.reject(&:no_tracking?).sort_by(&:first_activity_date).reverse.each do |tracked_card|
+        - @tracked_cards.sort_by(&:first_activity_date).reverse.each do |tracked_card|
 
           - if  tracked_card.estimates.present?
             - estimate = tracked_card.estimates.last.amount
@@ -74,3 +74,15 @@
       %tr
         %td All is done correctly
         %td= all_is_ok
+.span3
+  %table.table
+    %thead
+      %th Tracked effort per member
+      %th since the beginning
+      %th in the last 7 days
+    %tbody
+    - @tracked_cards.map(&:efforts).flatten.map(&:members).flatten.uniq.sort_by(&:effort_spent).reverse.each do |member|
+      %tr
+        %td= member.username
+        %td= member.effort_spent.to_s
+        %td= member.effort_spent(7.days.ago.to_date).to_s

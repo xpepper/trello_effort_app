@@ -2,7 +2,7 @@ class TrackedCardsController < ApplicationController
   # GET /tracked_cards
   # GET /tracked_cards.json
   def index
-    @tracked_cards = TrackedCard.all
+    @tracked_cards = TrackedCard.all.reject(&:no_tracking?)
 
     respond_to do |format|
       format.html # index.html.erb
