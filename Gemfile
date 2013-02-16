@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'trello_effort_tracker'
-# gem 'trello_effort_tracker', path: "../trello_effort_tracker"
+# gem 'trello_effort_tracker', path: "../trello_effort_tracker"   # use this if you want to hack directly on the source gem
 
 ## Rails gems ##
 gem 'rails', '3.2.12'
