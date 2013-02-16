@@ -49,6 +49,7 @@ rake run:today  # will extract today's tracked data and store on the default (th
 rake 'run:from_day[2012-11-1, production]'  # will extract tracked data starting from November the 1st, 2012 and store them into the production db
 ```
 
+## Configuration params
 ### Mongo storage configuration
 Tracking data collected from Trello are stored in a MongoDB database.
 
