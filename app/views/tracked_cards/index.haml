@@ -11,11 +11,12 @@
 
     - if @tracked_cards.present?
       %tbody
+        / TODO extract this ruby logic and move elsewhere
         - no_estimates = 0
         - under_estimates = 0
         - all_is_ok = 0
         - no_effort = 0
-        - @tracked_cards.sort_by(&:first_activity_date).reverse.each do |tracked_card|
+        - @tracked_cards.each do |tracked_card|
 
           - if  tracked_card.estimates.present?
             - estimate = tracked_card.estimates.last.amount
@@ -81,8 +82,9 @@
       %th since the beginning
       %th in the last 7 days
     %tbody
+    / TODO extract in a named scope on model?
     - @tracked_cards.map(&:efforts).flatten.map(&:members).flatten.uniq.sort_by(&:effort_spent).reverse.each do |member|
       %tr
         %td= member.username
-        %td= member.effort_spent.to_s
-        %td= member.effort_spent(7.days.ago.to_date).to_s
+        %td= member.effort_spent
+        %td= member.effort_spent(7.days.ago.to_date)

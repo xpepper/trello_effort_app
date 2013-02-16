@@ -55,6 +55,10 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    draper (1.1.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -128,6 +132,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
+    request_store (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-trello (0.5.1)
@@ -172,6 +177,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.2.1.1)
   coffee-rails (~> 3.2.1)
   compass-rails
+  draper
   haml
   jquery-rails
   rails (= 3.2.12)

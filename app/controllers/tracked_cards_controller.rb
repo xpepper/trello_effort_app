@@ -2,7 +2,8 @@ class TrackedCardsController < ApplicationController
   # GET /tracked_cards
   # GET /tracked_cards.json
   def index
-    @tracked_cards = TrackedCard.all.reject(&:no_tracking?)
+    #TODO introduce named scope in model?
+    @tracked_cards = TrackedCardDecorator.all.reject(&:no_tracking?).sort_by(&:first_activity_date).reverse
 
     respond_to do |format|
       format.html # index.html.erb

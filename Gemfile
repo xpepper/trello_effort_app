@@ -5,6 +5,7 @@ gem 'trello_effort_tracker'
 
 ## Rails gems ##
 gem 'rails', '3.2.12'
+gem 'draper'
 
 # Gems used only for assets and not required
 # in production environments by default.
