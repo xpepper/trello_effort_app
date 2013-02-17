@@ -5,6 +5,10 @@ class TrackedCardDecorator < Draper::Decorator
     model.effort_spent(since_date).to_s
   end
 
+  def link_to_trello_card
+    h.link_to model.name, model.url, target: "_blank"
+  end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #

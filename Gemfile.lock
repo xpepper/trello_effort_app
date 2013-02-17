@@ -33,6 +33,8 @@ GEM
     better_errors (0.6.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.1)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (2.2.1.1)
       sass (~> 3.2)
     bson (1.8.2)
@@ -55,6 +57,7 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    debug_inspector (0.0.2)
     draper (1.1.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -174,6 +177,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   bootstrap-sass (~> 2.2.1.1)
   coffee-rails (~> 3.2.1)
   compass-rails

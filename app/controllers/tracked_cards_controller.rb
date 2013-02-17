@@ -14,7 +14,7 @@ class TrackedCardsController < ApplicationController
   # GET /tracked_cards/1
   # GET /tracked_cards/1.json
   def show
-    @tracked_card = TrackedCard.find(params[:id])
+    @tracked_card = TrackedCardDecorator.decorate(TrackedCard.find(params[:id]))
 
     respond_to do |format|
       format.html # show.html.erb
