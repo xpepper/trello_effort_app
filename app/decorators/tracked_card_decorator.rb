@@ -10,11 +10,19 @@ class TrackedCardDecorator < Draper::Decorator
   end
 
   def created_at
-    model.created_at.to_formatted_s(:long)
+    model.created_at.strftime("%d.%m.%Y")
   end
 
   def updated_at
-    model.updated_at.to_formatted_s(:long)
+    model.updated_at.strftime("%d.%m.%Y")
+  end
+
+  def link_to_delete_effort(effort)
+    h.link_to "delete", h.tracked_card_effort_path(model, effort), :method => :delete, :confirm => "Are you sure?"
+  end
+
+  def link_to_edit_effort(effort)
+    h.link_to "edit", controller: "efforts", action: "edit", tracked_card_id: model, id: effort
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

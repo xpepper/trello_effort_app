@@ -1,5 +1,7 @@
 TrelloEffortApp::Application.routes.draw do
-  resources :tracked_cards
+  resources :tracked_cards do
+    resources :efforts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

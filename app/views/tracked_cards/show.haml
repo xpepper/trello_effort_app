@@ -8,7 +8,8 @@
 %ul
   - @tracked_card.efforts.order_by(:date.desc).each do |effort|
 
-    %li= "#{effort.date.strftime("%d.%m.%Y")}: #{effort.members.map(&:username).join(", ")} spent #{effort.amount} hours"
+    %li #{effort.date.strftime("%d.%m.%Y")}: #{effort.members.map(&:username).join(", ")} spent #{effort.amount} hours (#{@tracked_card.link_to_delete_effort(effort)}) (#{@tracked_card.link_to_edit_effort(effort)})
+
 %p Estimates:
 %ul
   - @tracked_card.estimates.order_by(:date.desc).each do |estimate|
