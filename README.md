@@ -1,8 +1,8 @@
 # Trello Effort App
-A bare minimal web app to show tracking data extrated from Trello with the [trello_effort_tracker](https://github.com/xpepper/trello_effort_tracker) gem. [Read this](https://github.com/xpepper/trello_effort_tracker/blob/master/README.md) to understand what's the idea behind this.
+A bare minimal web app to show tracking data extrated from Trello with the [tracco](https://github.com/xpepper/tracco) gem. [Read this](https://github.com/xpepper/tracco/blob/master/README.md) to understand what's the idea behind this.
 
 ## What is Trello Effort App?
-Trello Effort App shows the Trello cards on which you add tracking data as defined by the [trello_effort_tracker](https://github.com/xpepper/trello_effort_tracker) gem.
+Trello Effort App shows the Trello cards on which you add tracking data as defined by the [tracco](https://github.com/xpepper/tracco) gem.
 
 ## Usage
 
@@ -17,7 +17,7 @@ cd trello_effort_app
 cp config/config.template.yaml config/config.yml
 ```
 
-and then fill the correct values in the placeholders in config.yml (read the ["Where do I get an API key and API secret?"](https://github.com/xpepper/trello_effort_tracker/#where-do-i-get-an-api-key) section).
+and then fill the correct values in the placeholders in config.yml (read the ["Where do I get an API key and API secret?"](https://github.com/xpepper/tracco/#where-do-i-get-an-api-key) section).
 
 Then copy the mongoid config template
 
@@ -39,7 +39,7 @@ bundle install
 
 
 ## Rake tasks
-The trello_effort_tracker's rake tasks are available on the rails app too.
+The tracco's rake tasks are available on the rails app too.
 
 ```ruby
 rake 'run:today[test]' # will extract today's tracked data and store on the test db
@@ -64,13 +64,13 @@ A standard mongoid.yml is the following:
 development:
   sessions:
     default:
-      database: trello_effort_tracker_dev
+      database: tracco_dev
       hosts:
         - localhost:27017
 test:
   sessions:
     default:
-      database: trello_effort_tracker_test
+      database: tracco_test
       hosts:
         - localhost:27017
 production:
@@ -79,7 +79,7 @@ production:
 
   sessions:
     default:
-      database: trello_effort_tracker_production
+      database: tracco_production
       hosts:
         - localhost:27017
 ```
