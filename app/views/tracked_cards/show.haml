@@ -1,5 +1,6 @@
 %p.notice= notice
 %p= @tracked_card.link_to_trello_card
+%p= "created #{@tracked_card.created_at}, last update #{@tracked_card.updated_at}"
 %p= "Total effort: #{@tracked_card.total_effort} hours"
 - if @tracked_card.last_estimate_error.present?
   %p= "Estimate error: #{@tracked_card.last_estimate_error}%"

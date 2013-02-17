@@ -9,6 +9,14 @@ class TrackedCardDecorator < Draper::Decorator
     h.link_to model.name, model.url, target: "_blank"
   end
 
+  def created_at
+    model.created_at.to_formatted_s(:long)
+  end
+
+  def updated_at
+    model.updated_at.to_formatted_s(:long)
+  end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
