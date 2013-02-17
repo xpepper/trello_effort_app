@@ -13,4 +13,6 @@
   - @tracked_card.estimates.order_by(:date.desc).each do |estimate|
     %li= "#{estimate.date.strftime("%d.%m.%Y")}: estimated #{estimate.amount.to_s} remaining hours"
 
+= link_to 'Edit', edit_tracked_card_path(@tracked_card)
+|
 = link_to 'Back', tracked_cards_path
