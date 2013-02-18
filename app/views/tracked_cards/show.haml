@@ -1,4 +1,4 @@
-%p.notice= notice
+%p.alert.alert-success= notice
 %p= @tracked_card.link_to_trello_card
 %p= "created #{@tracked_card.created_at}, last update #{@tracked_card.updated_at}"
 %p= "Total effort: #{@tracked_card.total_effort} hours"

@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+  <div>Members:
+    <ul>
+      <% @effort.members.each do |member| %>
+        <li><%= member.username %> (<%= link_to "delete", tracked_card_effort_member_path(@tracked_card, @effort, member), :method => :delete, :confirm => "Are you sure?" %>)
+      <% end %>
+    </ul>
+  </div>
+
   <div class="field">
     <%= f.label :amount %>
     <%= f.text_field :amount, :class => 'span1' %>
@@ -24,4 +32,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

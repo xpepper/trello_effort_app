@@ -28,7 +28,7 @@ class EffortsController < ApplicationController
     tracked_card.efforts.where(id: params[:id]).destroy
 
     respond_to do |format|
-      format.html { redirect_to tracked_card_path(tracked_card) }
+      format.html { redirect_to tracked_card_path(tracked_card), notice: 'Tracked card was successfully updated.' }
       format.json { head :no_content }
     end
   end
