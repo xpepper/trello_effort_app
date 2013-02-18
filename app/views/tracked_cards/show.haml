@@ -1,6 +1,6 @@
 - if notice.present?
   %p.alert.alert-success= notice
-%p= @tracked_card.link_to_trello_card
+%h4= @tracked_card.link_to_trello_card
 %p= "created #{@tracked_card.created_at}, last update #{@tracked_card.updated_at}"
 %p= "Total effort: #{@tracked_card.total_effort} hours"
 - if @tracked_card.last_estimate_error.present?
@@ -18,7 +18,6 @@
       %li= "#{estimate.date.strftime("%d.%m.%Y")}: estimated #{estimate.amount.to_s} remaining hours"
 - else
   %p No estimates
-
 
 = link_to 'Edit', edit_tracked_card_path(@tracked_card)
 |
