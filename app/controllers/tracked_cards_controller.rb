@@ -27,22 +27,6 @@ class TrackedCardsController < ApplicationController
     @tracked_card = TrackedCard.find(params[:id])
   end
 
-  # POST /tracked_cards
-  # POST /tracked_cards.json
-  def create
-    @tracked_card = TrackedCard.new(params[:tracked_card])
-
-    respond_to do |format|
-      if @tracked_card.save
-        format.html { redirect_to @tracked_card, notice: 'Tracked card was successfully created.' }
-        format.json { render json: @tracked_card, status: :created, location: @tracked_card }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @tracked_card.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # PUT /tracked_cards/1
   # PUT /tracked_cards/1.json
   def update
