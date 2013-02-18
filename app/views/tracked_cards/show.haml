@@ -1,4 +1,5 @@
-%p.alert.alert-success= notice
+- if notice.present?
+  %p.alert.alert-success= notice
 %p= @tracked_card.link_to_trello_card
 %p= "created #{@tracked_card.created_at}, last update #{@tracked_card.updated_at}"
 %p= "Total effort: #{@tracked_card.total_effort} hours"
@@ -10,10 +11,14 @@
 
     %li #{effort.date.strftime("%d.%m.%Y")}: #{effort.members.map(&:username).join(", ")} spent #{effort.amount} hours (#{@tracked_card.link_to_delete_effort(effort)}) (#{@tracked_card.link_to_edit_effort(effort)})
 
-%p Estimates:
-%ul
-  - @tracked_card.estimates.order_by(:date.desc).each do |estimate|
-    %li= "#{estimate.date.strftime("%d.%m.%Y")}: estimated #{estimate.amount.to_s} remaining hours"
+- if @tracked_card.estimates.present?
+  %p Estimates:
+  %ul
+    - @tracked_card.estimates.order_by(:date.desc).each do |estimate|
+      %li= "#{estimate.date.strftime("%d.%m.%Y")}: estimated #{estimate.amount.to_s} remaining hours"
+- else
+  %p No estimates
+
 
 = link_to 'Edit', edit_tracked_card_path(@tracked_card)
 |
