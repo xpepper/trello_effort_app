@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= f.text_field :amount, :class => 'span1' %>
   </div>
 
   <div class="field">
     <%= f.label :date %>
-    <%= f.date_select :date %>
+    <%= f.date_select :date, { :order =>  [:day, :month, :year] }, :class => 'span1' %>
   </div>
 
   <div class="actions">
