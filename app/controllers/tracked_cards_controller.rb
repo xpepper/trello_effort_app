@@ -22,17 +22,6 @@ class TrackedCardsController < ApplicationController
     end
   end
 
-  # GET /tracked_cards/new
-  # GET /tracked_cards/new.json
-  def new
-    @tracked_card = TrackedCard.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @tracked_card }
-    end
-  end
-
   # GET /tracked_cards/1/edit
   def edit
     @tracked_card = TrackedCard.find(params[:id])

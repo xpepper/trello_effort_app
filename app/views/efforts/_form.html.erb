@@ -14,7 +14,7 @@
   <div>Members:
     <ul>
       <% @effort.members.each do |member| %>
-        <li><%= member.username %> (<%= link_to "delete", tracked_card_effort_member_path(@tracked_card, @effort, member), :method => :delete, :confirm => "Are you sure?" %>)
+        <li><%= member.username %> (<%= link_to "delete", [@tracked_card, @effort, member], :method => :delete, :confirm => "Are you sure?" %>)
       <% end %>
     </ul>
   </div>

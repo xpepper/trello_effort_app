@@ -18,7 +18,7 @@ class TrackedCardDecorator < Draper::Decorator
   end
 
   def link_to_delete_effort(effort)
-    h.link_to "delete", h.tracked_card_effort_path(model, effort), :method => :delete, :confirm => "Are you sure?"
+    h.link_to "delete", [model, effort], :method => :delete, :confirm => "Are you sure?"
   end
 
   def link_to_edit_effort(effort)
