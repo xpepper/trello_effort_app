@@ -1,7 +1,7 @@
 TrelloEffortApp::Application.routes.draw do
-  resources :tracked_cards do
-    resources :efforts do
-      resources :members
+  resources :tracked_cards, :except => [:new, :create] do
+    resources :efforts, :only => [:edit, :update, :destroy] do
+      resources :members, :only => [:destroy]
     end
   end
 

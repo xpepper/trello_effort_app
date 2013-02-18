@@ -14,5 +14,7 @@
     = render template:'layouts/menu-header'
     .container-fluid
       .row-fluid
+        - if notice.present?
+          %p.alert.alert-success= notice
         = yield
       = render template: 'layouts/footer'
