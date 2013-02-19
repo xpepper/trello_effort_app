@@ -86,5 +86,5 @@
     - @tracked_cards.map(&:efforts).flatten.map(&:members).flatten.uniq.sort_by(&:effort_spent).reverse.each do |member|
       %tr
         %td= member.username
-        %td= member.effort_spent
-        %td= member.effort_spent(7.days.ago.to_date)
+        %td= number_with_precision(member.effort_spent, precision: 0)
+        %td= number_with_precision(member.effort_spent(7.days.ago.to_date), precision: 0)
