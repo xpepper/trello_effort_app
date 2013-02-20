@@ -25,6 +25,10 @@ class TrackedCardDecorator < Draper::Decorator
     h.link_to "edit", controller: "efforts", action: "edit", tracked_card_id: model, id: effort
   end
 
+  def trello_notifications
+    model.trello_notifications.map {|n| "#{n.date}: #{n.data['text']}" }
+  end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
