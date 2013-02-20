@@ -24,9 +24,9 @@
 
 %h5 Raw tracking notifications
 - @tracked_card.trello_notifications.each do |n|
-  %pre.span10= n
+  %pre= n
 
-%p.span2
+%p
   = link_to 'Edit', edit_tracked_card_path(@tracked_card)
   |
   = link_to 'Back', tracked_cards_path

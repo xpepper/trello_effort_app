@@ -2,11 +2,6 @@
   .navbar-inner
     .container-fluid
       %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
-        %a.brand(href="#") Tracked cards
+        =link_to "Tracked Cards", root_path, class: "brand"
       .nav-collapse.collapse
         %p.navbar-text.pull-right
-        %ul.nav
-          %li.active
-            %a(href="#")
-              Show
-          
