@@ -83,7 +83,7 @@
       %th in the last 7 days
     %tbody
     / TODO extract in a named scope on model?
-    - @tracked_cards.map(&:efforts).flatten.map(&:members).flatten.uniq.sort_by(&:effort_spent).reverse.each do |member|
+    - @tracked_cards.map(&:members).flatten.uniq.sort_by(&:effort_spent).reverse.each do |member|
       %tr
         %td= member.username
         %td= number_with_precision(member.effort_spent, precision: 0)
