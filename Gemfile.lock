@@ -133,6 +133,7 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-web-console (0.2.0)
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -195,6 +196,7 @@ DEPENDENCIES
   haml
   jquery-rails
   rails (= 3.2.12)
+  rails-web-console
   sass-rails (~> 3.2.3)
   tracco
   uglifier (>= 1.0.3)
