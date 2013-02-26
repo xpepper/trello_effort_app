@@ -25,7 +25,7 @@ class EffortsController < ApplicationController
   # DELETE /tracked_cards/:tracked_card_id/efforts/:id(.:format)
   def destroy
     tracked_card = TrackedCard.find(params[:tracked_card_id])
-    tracked_card.efforts.where(id: params[:id]).destroy
+    tracked_card.efforts.where(id: params[:id]).update_all(muted: true)
 
     respond_to do |format|
       format.html { redirect_to tracked_card_path(tracked_card), notice: 'Tracked card was successfully updated.' }
