@@ -1,10 +1,11 @@
 TrelloEffortApp::Application.routes.draw do
+  scope :module => "tracco" do
   resources :tracked_cards, :except => [:new, :create] do
     resources :efforts, :only => [:edit, :update, :destroy] do
       resources :members, :only => [:destroy]
     end
   end
-
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -54,7 +55,9 @@ TrelloEffortApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'tracked_cards#index'
+  # root :to => 'tracked_cards#index', :module => 'tracco'
+  match '/', :controller => 'tracco/tracked_cards', :action => 'index'
+
 
   # See how all your routes lay out with "rake routes"
 

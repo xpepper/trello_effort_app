@@ -51,7 +51,7 @@
             %td.who
               - tracked_card.members.each do |member|
                 .member= link_to image_tag(member.avatar_url, title: member.username), member.url
-            %td.name= link_to tracked_card.name, tracked_card
+            %td.name= link_to tracked_card.name, tracked_card_path(tracked_card)
             %td.estimate= estimate
             %td.effort= effort
             %td.difference= difference
