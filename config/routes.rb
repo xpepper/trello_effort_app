@@ -56,6 +56,7 @@ TrelloEffortApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'tracked_cards#index', :module => 'tracco'
+  root :to => 'tracco/tracked_cards', :action => 'index', :module => 'tracco'
   match '/', :controller => 'tracco/tracked_cards', :action => 'index'
 
 

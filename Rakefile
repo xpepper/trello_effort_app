@@ -7,4 +7,4 @@ require File.expand_path('../config/application', __FILE__)
 TrelloEffortApp::Application.load_tasks
 
 # loads the rake task from tracco gem
-Dir["#{Gem.searcher.find('tracco').full_gem_path}/lib/tasks/tasks.rake"].each { |ext| load ext }
+Dir["#{Gem::Specification.find_all_by_name('tracco').first.full_gem_path}/lib/tasks/tasks.rake"].each { |ext| load ext }
