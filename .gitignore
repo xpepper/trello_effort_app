@@ -41,3 +41,5 @@ InstalledFiles
 /log/*
 log
 /db/*.sqlite3
+.ruby-version
+.ruby-gemset
