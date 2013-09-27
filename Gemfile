@@ -4,7 +4,7 @@ gem 'tracco'
 # gem 'tracco', path: "../tracco"   # use this if you want to hack directly on the source gem
 
 ## Rails gems ##
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.14'
 gem 'draper'
 
 # Gems used only for assets and not required
