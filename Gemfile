@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'tracco'
 # gem 'tracco', path: "../tracco"   # use this if you want to hack directly on the source gem
