@@ -1,0 +1,36 @@
+development:
+  sessions:
+    default:
+      database: trello_effort_tracker_dev
+      hosts:
+        - localhost:27017
+
+test:
+  sessions:
+    default:
+      database: trello_effort_tracker_test
+      hosts:
+        - localhost:27017
+
+<% if ENV['MONGOHQ_URL'] %>
+  # heroku
+  production:
+    sessions:
+      default:
+        uri: <%= ENV['MONGOHQ_URL'] %>
+        options:
+          skip_version_check: true
+          safe: true
+          persist_in_safe_mode: true
+          max_retries_on_connection_failure: 20
+<% else %>
+  production:
+    autocreate_indexes: true
+    persist_in_safe_mode: true
+
+    sessions:
+      default:
+        database: trello_effort_tracker_production
+        hosts:
+          - localhost:27017
+<% end %>
