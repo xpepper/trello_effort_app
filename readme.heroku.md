@@ -26,7 +26,7 @@ heroku addons:add papertrail:choklad
 
 ### Deploy on Heroku
 ```shell
-git push heroku master (thesameofganzodigomma)
+git push heroku master
 ```
 
 ## Environment configuration
