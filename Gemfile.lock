@@ -107,6 +107,7 @@ GEM
     multi_json (1.8.0)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    newrelic_rpm (3.6.8.164)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
@@ -202,6 +203,7 @@ DEPENDENCIES
   draper
   haml
   jquery-rails
+  newrelic_rpm
   rails (= 3.2.14)
   rails-web-console
   rails_12factor

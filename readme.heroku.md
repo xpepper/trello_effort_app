@@ -49,5 +49,10 @@ heroku config:unset DATABASE_URL
 ### To collect data from your Trello boards
 (e.g. starting from 2013.03.23)
 ```
-heroku run bundle exec tracco collect 2013.03.23 -e production
+heroku run bundle exec tracco collect 2013.03.23 -e production --app trellotracker
+```
+
+### To run the console
+```
+heroku run tracco c -e production --app trellotracker
 ```

@@ -4,13 +4,12 @@ ruby '1.9.3'
 gem 'tracco'
 # gem 'tracco', path: "../tracco"   # use this if you want to hack directly on the source gem
 
-## Rails gems ##
 gem 'rails', '3.2.14'
 gem 'draper'
 
-# Gems used only for assets and not required
-# in production environments by default.
 gem "haml"
+gem "bootstrap-sass", "~> 2.2.1.1"
+gem 'jquery-rails'
 
 group :development do
   gem "better_errors"
@@ -30,5 +29,5 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem "bootstrap-sass", "~> 2.2.1.1"
-gem 'jquery-rails'
+gem 'newrelic_rpm'
+
